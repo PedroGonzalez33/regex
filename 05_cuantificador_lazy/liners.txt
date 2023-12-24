@@ -1,0 +1,39 @@
+El delimitador “lazy” o “perezoso” en las expresiones regulares, representado por el metacaracter ?, 
+modifica el comportamiento de los cuantificadores para que sean “perezosos” en lugar de “codiciosos”. 
+Esto afecta cómo se realiza la coincidencia cuando se trata de patrones que pueden tener múltiples 
+coincidencias en una cadena de texto.
+
+Por defecto, los cuantificadores en expresiones regulares son “codiciosos”. Esto significa que tratan de encontrar 
+la coincidencia más larga posible en la cadena de texto. Por ejemplo, considera la expresión regular .*[\.\n] que 
+coincide con cualquier cosa y justo despues un punto o un salto de linea en una cadena. Si tienes el texto 
+“abc.def.ghi” , una expresión regular codiciosa coincidirá con todo el texto desde el primer punto hasta el último punto. 
+
+Al agregar ? después de un cuantificador, se vuelve “perezoso”. Esto significa que tratará de encontrar la coincidencia 
+más corta posible en la cadena de texto. Usando el ejemplo anterior, si tienes la expresión regular .*?, coincidirá con 
+“abc.”, “def.” y “ghi”  como 3 coincidencias diferentes, en lugar de coincidir con toda la cadena desde el primer punto 
+hasta el último.
+
+
+Veamos un ejemplo más detallado para comprender mejor la diferencia:
+Supongamos que tenemos el siguiente texto:
+<div>Texto1</div><div>Texto2</div>
+
+
+Y queremos extraer el contenido entre las etiquetas <div> y </div>. Si usamos la expresión regular codiciosa <div>.*</div>, 
+obtendríamos una sola coincidencia que abarca todo el texto entre el primer <div> y el último </div>:
+<div>Texto1</div><div>Texto2</div>
+
+Sin embargo, si usamos la expresión regular perezosa <div>.*?</div>, obtendríamos dos coincidencias separadas, 
+una para cada par de etiquetas <div> y </div>:
+1. <div>Texto1</div>
+2. <div>Texto2</div>
+
+El delimitador “lazy” (?) es útil cuando deseas encontrar las coincidencias más pequeñas y específicas en lugar 
+de las más grandes y generales. Esto es particularmente útil cuando estás procesando documentos HTML, XML, CSV 
+u otros formatos similares donde deseas extraer información específica de las etiquetas.
+
+
+abc.def.ghi
+
+
+<div>Texto1</div><div>Texto2</div>

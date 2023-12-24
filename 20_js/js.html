@@ -1,0 +1,28 @@
+// 2018-06-04,Italy,Netherlands,1,1,Friendly,Turin,Italy,FALSE
+// 2018-06-04,Serbia,Chile,0,1,Friendly,Graz,Austria,TRUE
+// 2018-06-04,Slovakia,Morocco,1,2,Friendly,Geneva,Switzerland,TRUE
+// 2018-06-04,Armenia,Moldova,0,0,Friendly,Kematen,Austria,TRUE
+// 2018-06-04,India,Kenya,3,0,Friendly,Mumbai,India,FALSE 
+
+// En este caso validaremos que la entrada por el usuario sea un email
+<html>
+    <head>
+        <title>JS + Regex </title>
+        <script>
+            function validate(str){
+                if(str.match(/^\w{5,10}@[\w\.]{2,10}\.\w{2,5}$/i)){
+                    document.getElementById("boton").disabled = false;
+                    document.getElementById("in").style.backgroundColor="blue";
+
+                }else{
+                    document.getElementById("in").style.backgroundColor="red";
+                }
+                console.log(str);
+            }
+        </script>
+    </head>
+    <body>
+        <input type="text" name="email" onkeyup="validate(this.value)" id="in">
+        <input type="button" value="enviar" disabled id="boton" onclick="alert('cool')">
+    </body>
+</html>

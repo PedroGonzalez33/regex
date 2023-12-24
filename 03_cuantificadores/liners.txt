@@ -1,0 +1,66 @@
+Los cuantificadores en expresiones regulares son metacaracteres que te permiten controlar la cantidad de veces que un elemento 
+o grupo puede aparecer en una cadena de texto. Los cuantificadores te ayudan a especificar si un elemento debe aparecer 
+una cantidad específica de veces, si puede ser opcional o si puede repetirse un número variable de veces.
+
+Aquí están algunos de los cuantificadores más comunes en expresiones regulares:
+1. *: Cero o más veces: Indica que el elemento anterior puede aparecer cero o más veces en el texto, hay que tener en cuenta 
+que las coincidencia las agrupa en un solo caracter a diferencia del (.) y (?) que los divide 1 a 1.
+	Por ejemplo:
+	-  a* coincidirá con “a”, “aa”, “aaa”, y así sucesivamente.
+	- [\d]a* coincidirá con todos los numeros que despues tengan cero o mas veces la letra "a"  
+
+2. +: Una o más veces: Indica que el elemento anterior debe aparecer al menos una vez, pero puede repetirse múltiples veces. 
+	Por ejemplo: 
+	- a+ coincidirá con “a”, “aa”, “aaa”, pero no con una cadena vacía.
+	- [\d]a+ coincidirá con todos los numeros que justo despues tengan una o mas veces la letra "a"
+	- [\d]*a+ coincidirá primero con que exista cero o mas numeros y justo despues exista una o mas veces la letra "a"
+
+3. ?: Cero o una vez: Indica que el elemento anterior es opcional y puede aparecer cero o una vez en el texto. 
+	Por ejemplo: 
+	- colou?r coincidirá tanto con “color” como con “colour”.
+	- [\d]a? coincidirá con todos los numeros que justo despues tengan cero o una vez la letra "a"
+	- [\d]*a? coincidirá primero con que exista cero o mas numeros y justo despues exista cero o una vez la letra "a"
+
+4. {n}: Exactamente n veces: Indica que el elemento anterior debe aparecer exactamente n veces en el texto. 
+	Por ejemplo: 
+	- a{3} coincidirá con “aaa”.
+
+5. {n,}: Al menos n veces: Indica que el elemento anterior debe aparecer al menos n veces en el texto. 
+	Por ejemplo: 
+	- a{2,} coincidirá con “aa”, “aaa”, “aaaa”, y así sucesivamente.
+
+6. {n,m}: Entre n y m veces: Indica que el elemento anterior debe aparecer al menos n veces y como máximo m veces en el texto. 
+	Por ejemplo: 
+	- a{2,4} coincidirá con “aa”, “aaa” y “aaaa”.
+
+7. *?, +?, ??, {n,}?, {n,m}?: Cuantificadores perezosos: Estos cuantificadores hacen que la coincidencia sea lo más corta posible. 
+Por defecto, los cuantificadores son “codiciosos”, lo que significa que tratan de encontrar la mayor cantidad de coincidencias posible. 
+Agregando ? después del cuantificador, se vuelve “perezoso”.
+
+
+1
+12aa
+123
+12a34a
+12345
+12345678910
+12345678910a
+13453243
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+csv1,csv2,csv3,csv4,csv5
+Rodrigo Jiménez Gutiérrez
+5556581111
+56-58-11-12
+302-345-9876
+esto.es.un.mail+gmail@mail.com
+mi_dominio.com
+[LOG ENTRY] [ERROR] The system is unstable
+[LOG ENTRY] [WARN] The system may be down
+[LOG ENTRY] [LOG] Everything is OK
+[LOG ENTRY] [LOG] [user:@beco] Logged in
+[LOG ENTRY] [LOG] [user:@beco] Clicked here
+[LOG ENTRY] [LOG] [user:@beco] Rated the app
+[LOG ENTRY] [LOG] [user:@beco] Logged out

@@ -1,0 +1,50 @@
+Este caracter nos permite negar una clase o construir “anticlases”, vamos a llamarlo así, que es toda la serie de 
+caracteres que no queremos que entren en nuestro resultado de búsqueda.
+
+Para esto definimos una clase, por ejemplo: [0-9], y la negamos [^0-9] para buscar todos los caracteres que coincidan 
+con cualquier caracter que no sea 0,1,2,3,4,5,6,7,8 ó 9 
+
+Otro ejemplo:
+    - [^0-5a-c ] busca todos los caracteres QUE NO SEAN numeros del 0 al 5,  letras de la a a la c y que no sean espacios 
+en blanco. 
+
+Tambien podemos negar usando las mayusculas de los caracteres especiales como:
+    - \D: Coincide con cualquier carácter que no sea un dígito numérico.
+    - \W: Coincide con cualquier carácter que no sea un carácter de palabra.
+    - \S: Coincide con cualquier carácter que no sea un espacio en blanco.
+
+Ejemplo:
+    - \d\d\D?\d\d\D?\d\d busca un dígito, luego dígito, luego que tenga o no algo que no sea dígito, otro dígito, 
+otro dígito, que tenga o no algo que no sea dígito, otro dígito y finalmente otro dígito.
+
+Nota: El simbolo ^ solamente funciona como negación si se coloca dentro de una clase, de otro modo funciona como 
+principio de línea
+
+1
+12
+123
+1234
+12345
+12345678910
+12345678910a
+13453243
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+csv1,csv2,csv3,csv4,csv5
+Rodrigo Jiménez Gutiérrez
++55565811
+56-58-11-12
+55.59.24.98
+55.56 45-73
+302-345-9876
+esto.es.un.mail+gmail@mail.com
+mi_dominio.com
+[LOG ENTRY] [ERROR] The system is unstable
+[LOG ENTRY] [WARN] The system may be down
+[LOG ENTRY] [LOG] Everything is OK
+[LOG ENTRY] [LOG] [user:@beco] Logged in
+[LOG ENTRY] [LOG] [user:@beco] Clicked here
+[LOG ENTRY] [LOG] [user:@beco] Rated the app
+[LOG ENTRY] [LOG] [user:@beco] Logged out

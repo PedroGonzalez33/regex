@@ -1,0 +1,37 @@
+En las expresiones regulares (RegEx), el punto (.) es un metacaracter especial que tiene un significado específico: 
+coincide con cualquier carácter, excepto un salto de línea. En otras palabras, el punto se utiliza para representar 
+cualquier carácter individual en una cadena de texto, sin importar si es una letra, un número, un símbolo o un espacio 
+en blanco, excepto el carácter de nueva línea.
+
+Aquí hay algunos ejemplos de cómo se puede utilizar el punto en expresiones regulares:
+- La expresión regular c.t coincidiría con cadenas como “cat” (gato), “cut” (corte), “cot” (bermudas), 
+ya que el punto se corresponde con cualquier carácter único en el lugar del punto.
+
+- Si usamos la expresión regular h.t, coincidiría con “hat” (sombrero), “hot” (caliente), “hit” (golpe), 
+pero no coincidiría con “heat” (calor) porque el punto solo coincide con un único carácter.
+
+- Si tienes la expresión regular a.b, coincidiría con “aab” o “a#b”, ya que el punto coincide con cualquier carácter 
+individual.
+
+1
+12
+123
+1234
+12345
+12345678910
+12345678910a
+13453243
+Hola soy peter
+palabra
+a=b
+a/b
+a#b
+a'b
+h.t
+hot
+heat
+hit
+cat
+cut
+cot
+put

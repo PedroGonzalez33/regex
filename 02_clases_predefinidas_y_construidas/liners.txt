@@ -1,0 +1,76 @@
+Del caracter . nacen 3 tipos diferentes de clases predefinidas por la sintaxis de expresiones regulares:
+El dígito (\d), la palabra (\w) y los espacios (\s)
+
+El dígito (\d):
+- \d: Coincide con cualquier dígito numérico del 0 al 9.
+- \D: Coincide con cualquier carácter que no sea un dígito numérico.
+
+La palabra (\w):
+- \w: Coincide con cualquier carácter de palabra, que incluye letras (mayúsculas y minúsculas), dígitos y el guion bajo _.
+- \W: Coincide con cualquier carácter que no sea un carácter de palabra.
+
+Los espacios (\s):
+- \s: Coincide con cualquier espacio en blanco, incluyendo espacios, tabulaciones y saltos de línea.
+- \S: Coincide con cualquier carácter que no sea un espacio en blanco.
+
+
+Clases construidas
+
+Las clases de caracteres construidas son conjuntos personalizados de caracteres que puedes definir dentro de una 
+expresión regular para buscar coincidencias específicas. Podemos crearla con la ayuda de corchetes [] 
+
+Aquí hay algunos ejemplos de cómo se construyen estas clases de caracteres:
+1. [...]: Clase de caracteres: Puedes definir una clase de caracteres encerrando los caracteres que deseas coincidir entre corchetes. 
+	Por ejemplo:
+	- [aeiou] coincidirá con cualquier vocal en minúscula.
+
+2. [^...]: Clase de caracteres negada: Agregando un símbolo de circunflejo (^) al principio de una clase de caracteres, puedes crear una clase negada. 
+	Por ejemplo: 
+	- [^0-9] coincidirá con cualquier carácter que no sea un dígito numérico del 0-9.
+
+3. [a-z], [A-Z], [0-9]: Rangos de caracteres: Puedes especificar rangos de caracteres al utilizar guiones dentro de una clase de caracteres. 
+	Por ejemplo:
+	- [a-z] coincidirá con cualquier letra minúscula 
+	- [A-Z] con cualquier letra mayúscula, y 
+	- [0-9] con cualquier dígito numérico del 0-9.
+
+4. [...]: Combinación de caracteres: Puedes combinar múltiples clases o rangos dentro de una misma clase de caracteres. 
+	Por ejemplo: 
+	- [a-zA-Z] coincidirá con cualquier letra, tanto minúscula como mayúscula.
+	- [4-5x-z] Busca los números y dígitos entre esos rangos (4 al 5 y x a la z en minusculas)
+
+5. \: Escape de caracteres especiales: Si deseas incluir caracteres especiales como -, ] o [ dentro de una clase de caracteres, debes escaparlos con una barra invertida \.
+	Por ejemplo:
+	- [\.] Buscara todos los caracter .
+
+6. {}: Llaves: Le indicamos cuantos caracteres consecutivos debe de hacer match con nuestra condición.
+	Por ejemplo:
+	- \d{3}-\d{3}-\d{4} buscaría patrones de números que tengan el formato de (3 numeros - 3 numeros - 4 numeros)
+
+
+1
+12
+123
+1234
+12345
+12345678910
+12345678910a
+13453243
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+csv1,csv2,csv3,csv4,csv5
+Rodrigo Jiménez Gutiérrez
+5556581111
+56-58-11-12
+302-345-9876
+esto.es.un.mail+gmail@mail.com
+mi_dominio.com
+[LOG ENTRY] [ERROR] The system is unstable
+[LOG ENTRY] [WARN] The system may be down
+[LOG ENTRY] [LOG] Everything is OK
+[LOG ENTRY] [LOG] [user:@beco] Logged in
+[LOG ENTRY] [LOG] [user:@beco] Clicked here
+[LOG ENTRY] [LOG] [user:@beco] Rated the app
+[LOG ENTRY] [LOG] [user:@beco] Logged out

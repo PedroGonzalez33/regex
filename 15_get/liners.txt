@@ -1,0 +1,16 @@
+Al hacer consultas a sitios web mediante el método GET se envían todas las variables al servidor a través de la misma URL.
+La parte de esta url que viene luego del signo de interrogación ? se le llama query del request que es: variable1=valor1
+variable2  => valor2&… y así tantas veces como se necesite. 
+
+A continuacion veremos como podemos descomponer todos estos valores para poder trabajar con ellos
+
+Primero hacemos la expresion regular y agrupamos las variables que queremos
+    - [\?&](\w+)=([^&\n]+) 
+
+Ahora procedemos a crear nuestro formato y reemplazar el texto
+    - \n $1  => $2
+
+https://b3co.com/?s=fotografia&mode=search&module=blog
+https://www.google.com/search?q=regex+platzi&oq=regex+platzi&aqs=chrome..69i57j69i60.6885j0j9&sourceid=chrome&ie=UTF-8
+https://co.search.yahoo.com/search?p=flickr&fr=yfp-t&fp=1&toggle=1&cop=mss&ie=UTF-8
+https://rsd.com/Emp/all/?Buscar=buscar&Empleado=carlos&no=10&TelCasa=ewr44&Celular=49&Puesto=re&FechaIngreso=43&NumeroCuenta=43&NoSeguro=444&Empresa=e

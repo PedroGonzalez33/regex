@@ -1,0 +1,47 @@
+Con los contadores podemos especificar el numero de ocurrencias que queremos obtener de un tipo de caracter 
+(numerico, palabra, simbolo, etc) estos tienen una cota inferior y una superior, indicando el mínimo y máximo de 
+resultados que se quieren encontrar.
+
+- Ejemplo regex: Contadores 
+	- \d{2,2} Busca la coincidencia de mínimo dos dígitos y máximo 2 dígitos
+	- \w{2,10} Busca las coincidencias de palabras con un minimo de 2 y un maximo de 10 palabras
+	- [0-5]{4,} Busca las coincidencias de numeros del 0-5 con un minimo de 4 digitos en adelante 
+
+- Ejemplo regex: Contadores seguidos de más patrones
+	- \d{2,2}-?\d{2,2}-?\d{2,2}-?\d{2,2}-?\d{2,2} Encuentra y selecciona las coincidencias empezando con mínimo 2 
+	y máximo dos dígitos, seguidos de cero o un guión, luego lo mismo cuatro veces, y finaliza con mínimo dos 
+	y máximo dos dígitos.
+	- \d{2,2}[\-\. ]? Encuentra y selecciona las coincidencias empezando con mínimo 2 y máximo dos dígitos, 
+	seguidos de cero o un guión (-), punto (.) o espacio( )
+
+Para no escribir la expresion 4 veces, podemos utilizar los contadores sobre toda la expresion
+	[+]?([\d]{2}[\-\. ]?){4}
+
+1
+12
+123
+1234
+12345
+12345678910
+12345678910a
+13453243
+url: https://www.instagram.com/p/BXB4zsUlW5Z/?taken-by=beco.mx
+url: http://instagram.com/p/blablablah
+url: http://itam.mx/test
+http://instagram.com/p/blablablah
+csv1,csv2,csv3,csv4,csv5
+Rodrigo Jiménez Gutiérrez
++55565811
+56-58-11-12
+55.59.24.98
+55.56 45-73
+302-345-9876
+esto.es.un.mail+gmail@mail.com
+mi_dominio.com
+[LOG ENTRY] [ERROR] The system is unstable
+[LOG ENTRY] [WARN] The system may be down
+[LOG ENTRY] [LOG] Everything is OK
+[LOG ENTRY] [LOG] [user:@beco] Logged in
+[LOG ENTRY] [LOG] [user:@beco] Clicked here
+[LOG ENTRY] [LOG] [user:@beco] Rated the app
+[LOG ENTRY] [LOG] [user:@beco] Logged out

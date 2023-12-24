@@ -1,0 +1,19 @@
+Realizaremos expresiones regulares para encontrar todos estos formatos validos de numeros de telefonos:
+    - ^\+?(\d{2}[\.\- ]?){2}\d*[\-pe#]?\d*$ 
+    - ^\+?(\d+[ \.\-pe#]?)+$ 
+    - ^\+?\d{2,3}[^\da-z]?\d{2,4}[^\da-z]?\d{2,3}[#pe]?\d*$ 
+
+555658
+56-58-11
+56.58.11
+56.78-98
+65 09 87
+76y87r98 (invalido)
+45y78-56 (invalido)
+78.87 65
+78 54-56
++521565811
+58-11-11#246
+55-5632-0417
+55256048p123
+55256048e123

@@ -1,0 +1,39 @@
+El principio y el final de línea son conceptos importantes en las expresiones regulares (RegEx) y se representan 
+mediante los metacaracteres ^ y $, respectivamente. Estos metacaracteres se utilizan para anclar coincidencias 
+al inicio o al final de una línea o cadena de texto.
+
+
+^ - Principio de Línea
+
+El metacaracter ^ se usa para anclar una coincidencia al principio de una línea o cadena de texto. 
+Indica que la coincidencia debe comenzar desde el inicio de la línea. Si estás trabajando con múltiples líneas, 
+puedes usar la bandera “multiline” (por ejemplo, /^patrón/m en JavaScript) para que ^ coincida con el principio 
+de cada línea en lugar del principio de toda la cadena.
+
+Ejemplo: La expresión regular ^Inicio coincidirá solo con “Inicio de línea” si “Inicio” está al principio de una línea.
+
+
+$ - Final de Línea
+
+El metacaracter $ se usa para anclar una coincidencia al final de una línea o cadena de texto. Indica que la 
+coincidencia debe terminar al final de la línea. Al igual que con ^, puedes usar la bandera “multiline” para que 
+$ coincida con el final de cada línea.
+
+Ejemplo: La expresión regular Final$ coincidirá solo con “Fin de línea” si “Final” está al final de una línea.
+
+Estos metacaracteres son particularmente útiles cuando deseas buscar patrones o realizar validaciones en líneas 
+individuales de texto, como cuando procesas un archivo de texto con múltiples líneas o cuando validas entradas 
+de usuario que deben cumplir con un formato específico al principio o al final de una línea.
+
+Tambien podemos combinar ambos metacaracteres como por ejemplo:
+    - Encontrar las lineas que contengan solo 4 columnas en un archivo csv ^(\w+,){3}\w+$ 
+
+inicio del texto
+el texto ya inicio
+casi es el final del texto  
+y este el final
+csv1,csv2,csv3,csv4,csv5
+csv1,csv2,csv3
+csv1,csv2,csv3,csv4
+1234,452
+123,444,212,123

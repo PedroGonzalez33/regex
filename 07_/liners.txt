@@ -1,0 +1,35 @@
+555658
+56-58-11
+56.58.11
+56.78-98
+65 09 87
+76y87r98
+
+Definir un patrón que haga match a todas las líneas excepto a la la última, la que tiene letras.
+
+Es decir, seleccionar todas sin importar el caracter de separación, excepto cuando los números 
+están separados entre sí por letras.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Mi solucion 1: 
+(\d{2}[\.\- ]?){3} En donde especifico los caracteres permitidos para separar los numeros
+
+Mi solucion 2: 
+(\d{2}[^a-zA-Z]?){3} Negando los caracteres que no quiero que permita (esta solucion es menos especifica) 
